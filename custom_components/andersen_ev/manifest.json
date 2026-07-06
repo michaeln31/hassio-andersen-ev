@@ -9,6 +9,5 @@
   "config_flow": true,
   "integration_type": "hub",
   "iot_class": "cloud_polling",
-  "version": "0.7.1",
-  "icon": "mdi:ev-station"
+  "version": "0.7.1"
 }

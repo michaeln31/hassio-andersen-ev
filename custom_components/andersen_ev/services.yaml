@@ -13,6 +13,7 @@ disable_all_schedules:
 get_device_info:
   name: Get Device Info
   description: Get detailed information about an Andersen EV charge point with results displayed in the UI
+  target: {}
   fields:
     device_id:
       name: Device ID
@@ -22,12 +23,12 @@ get_device_info:
       selector:
         text: {}
   response:
-    name: Device Information
-    description: Returns detailed information about the selected Andersen EV charger
+    optional: false
 
 get_device_status:
   name: Get Device Status
   description: Get detailed status of an Andersen EV charge point with results displayed in the UI
+  target: {}
   fields:
     device_id:
       name: Device ID
@@ -37,8 +38,7 @@ get_device_status:
       selector:
         text: {}
   response:
-    name: Device Status
-    description: Returns detailed status for the selected Andersen EV charger
+    optional: false
 
 reset_rcm:
   name: Reset RCM Fault
