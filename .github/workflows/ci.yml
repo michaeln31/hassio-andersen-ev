@@ -44,9 +44,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
           enable-cache: true
       - name: Install dependencies
-        run: uv pip install --system pytest pytest-asyncio pytest-cov -r requirements.txt
+        run: uv pip install pytest pytest-asyncio pytest-cov -r requirements.txt
       - name: Test with pytest
-        run: pytest --cov=custom_components/andersen_ev --cov-report=term-missing --cov-report=xml
+        run: uv run pytest --cov=custom_components/andersen_ev --cov-report=term-missing --cov-report=xml
 
   hassfest:
     name: Hassfest
