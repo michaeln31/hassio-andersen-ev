@@ -4,17 +4,16 @@ Thanks for your interest in contributing to the Andersen EV Home Assistant integ
 
 ## Branch model
 
-This repository uses a two-branch model:
+The primary branch is **`main`** — the stable trunk. Contributions normally target `main` via pull
+request; direct pushes are not used.
 
-* **`develop`** — the beta/staging trunk. Merges here publish `-beta.N` prereleases (release
-  automation coming soon).
-* **`main`** — the stable trunk. Releases are promoted here from `develop`.
+**`develop`** is an *optional* beta/staging branch. It is used only when a change should first go out
+as a `-beta.N` prerelease for testing before it lands on `main`. In that case the change is merged to
+`develop` (which publishes a beta prerelease), tested, and then `develop` is promoted to `main` for the
+stable release. When no beta is needed, PRs go straight to `main`.
 
-Both branches are protected and PR-only — there are no direct pushes to either.
-
-Contributor flow: fork the repo -> create a feature branch -> open a PR into `develop`. Maintainers
-promote `develop -> main` for stable releases. Everyday feature/fix PRs should target `develop`,
-**not** `main`.
+Contributor flow: fork the repo -> create a feature branch -> open a PR into `main` (or into
+`develop` if you want a beta test first).
 
 ## Commit messages
 
@@ -53,7 +52,8 @@ See the README's [Development](README.md#development) section for full details. 
 
 ## Releases & versioning
 
-This project follows [Semantic Versioning](https://semver.org/). The intended flow is: merges to
-`develop` cut `-beta.N` prereleases, and promotion to `main` cuts the stable release — both
-produced automatically by `release-please` (landing in an upcoming PR). Until that automation is
-in place, versions are bumped manually in `custom_components/andersen_ev/manifest.json`.
+This project follows [Semantic Versioning](https://semver.org/). Merges to `main` cut stable
+releases. When a change should be beta-tested first, merging it to the optional `develop` branch
+cuts a `-beta.N` prerelease; promoting `develop -> main` then cuts the stable release. Both are
+produced automatically by `release-please` (landing in an upcoming PR). Until that automation is in
+place, versions are bumped manually in `custom_components/andersen_ev/manifest.json`.
